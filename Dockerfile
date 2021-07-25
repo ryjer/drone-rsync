@@ -9,7 +9,7 @@ ENV XDG_CONFIG_HOME=/config
 
 # 创建相关目录和配置文件、密码文件。默认安装完 rsync 后会创建配置文件 /etc/rsyncd.conf
 RUN mkdir -p ${XDG_CONFIG_HOME} && \
-    touch ${XDG_CONFIG_HOME}/rsyncd.passwd ${XDG_CONFIG_HOME}/rsync.password && \
+    touch /etc/rsyncd.passwd ${XDG_CONFIG_HOME}/rsync.password && \
     chmod 600 /etc/rsyncd.passwd && \
     chmod 600 ${XDG_CONFIG_HOME}/rsync.password
 
